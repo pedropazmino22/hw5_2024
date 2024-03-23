@@ -1,0 +1,155 @@
+/* Logo animation snippet */
+
+@keyframes logo_animation{
+    from{ width: 25px; opacity: 0;}
+    to{width: 475px; opacity: 1;}
+}
+
+#logo{
+    width: 475px;
+    animation: logo_animation 5s;
+}
+
+
+/* MOBILE DEFAULT */
+
+body {
+    background-image: url("/images/concrete_seamless.png");
+    background-color: #f1f1f1;
+    font-family: "Poppins", serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+
+a:visited {
+    color: #0000EE;
+}
+
+.card>header {
+    background-color: #288088;
+    border: 2px solid #45adad;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 50px 50px 0 0;
+}
+
+.card {
+    flex-basis: 450px;
+    border-radius: 50px 50px 0 0;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery>img {
+    border: 10px solid #50c7c7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+/* BREAKPOINT @900px */
+
+@media only screen and (min-width: 900px) {
+
+    header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    body > header {
+        position: sticky;
+        top: 0;
+    }
+
+    .nav_links {
+        flex-direction: row;
+    }
+
+    .pricing {
+        align-items: center;
+    }
+
+    .card {
+        flex-basis: 275px;
+    }
+
+}
+
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+        width: 475px;
+        animation: none;
+    }
+
+
+}
+
+
+/* PRINT PORTRAIT MODE */
+
+@media print and (orientation: portrait) {
+    body {
+        font: Arial, Helvetica;
+        background-image: none;
+    }
+
+    nav{
+        width: 100%;
+    }
+
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .pricing {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+        /* height: 90%; */
+        /* I tried tweaking the height here because the preview was giving me different outputs, as of my last attempt it worked ok when I donwloaded the preview as PDF */
+    }
+
+    .card {
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+    }
+
+    .gallery, #gallery {
+        display: none;
+    }
+
+    .card>ul>li:nth-child(2)::after {
+        content: "\1F44D";
+    }
+
+}
+
